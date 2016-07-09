@@ -1,0 +1,21 @@
+
+
+<div>
+    
+    <nav class='nav navbar-default'>
+        <div class='container-fluid'>
+            <a class='navbar-brand'>{{pageTitle}}</a>
+            <ul class='nav navbar-nav'>
+                <li><a [routerLink]="['Welcome']">Home</a> </li>
+                <li><a [routerLink]="['Food']">Food</a> </li>
+                <li><a [routerLink]="['Products']">Exercise Tracker</a> </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class='container'>
+        <br/>
+        <router-outlet></router-outlet>
+    </div>
+    
+</div>

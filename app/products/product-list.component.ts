@@ -1,7 +1,7 @@
 import { Component, OnInit } from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
 
-import { IProduct } from './product';
+import { Product } from './product';
 import { ProductFilterPipe } from './product-filter.pipe';
 import { StarComponent } from '../shared/star.component';
 import { ProductService } from './product.service';
@@ -21,7 +21,7 @@ export class ProductListComponent implements OnInit {
     showImage: boolean = false;
     listFilter: string = '';
     errorMessage: string;
-    products: IProduct[];
+    products: Product[];
     
     constructor(private _productService: ProductService){ }
     

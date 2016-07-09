@@ -1,18 +1,19 @@
 import { Injectable } from 'angular2/core';
-import { Product } from './product';
+import { Ingedient } from './food';
 import { Http, Response } from 'angular2/http';
-import {Observable } from 'rxjs/Observable'; 
+import { Observable } from 'rxjs/Observable'; 
 
 
 @Injectable()
-export class ProductService {
-    private _productUrl = 'api/products/products.json';
+export class IngredientService {
+    private _ingredientUrl = 'api/foods/ingredients.json';
     
     constructor(private _http: Http) { }
     
-    public getProducts(): Observable<Product[]> {
-        return this._http.get(this._productUrl)
-        .map( (response: Response) => <Product[]>response.json() )
+    public getIngredients(): Observable<Ingedient[]> {
+        return this._http.get(this._ingredientUrl
+)
+        .map( (response: Response) => <Ingedient[]>response.json() )
         .do( data => console.log("All: " + JSON.stringify(data)))
         .catch(this.handleError);
     }

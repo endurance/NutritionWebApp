@@ -23,18 +23,22 @@
     <script src="node_modules/angular2/bundles/http.dev.js"></script>
     <!-- Required for routing -->
     <script src="node_modules/angular2/bundles/router.dev.js"></script>
-    
+    <script src="node_modules/list.js/dist/list.js"></script>
     <!-- 2. Configure SystemJS -->
     <script>
       // loading third party libraries
         System.config({
+          
+          paths: {
+            listjs: './node_modules/list.js/dist/list.js'
+          },
           // what to do when systemJS is asked to load things
-        packages: {        
-          app: {
-            // new module format designed to support ES 2015 Style modules within ES 5
-            format: 'register',
-            defaultExtension: 'js'
-          }
+          packages: {        
+            app: {
+              // new module format designed to support ES 2015 Style modules within ES 5
+              format: 'register',
+              defaultExtension: 'js'
+            }
         }
       });
       // imports our first angular 2 module

@@ -4,38 +4,25 @@ import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig } from 'angular2/route
 import 'rxjs/Rx'; // Load all features
 
 import { WelcomeComponent } from './home/welcome.component'
+import { FoodComponent } from './food/food.component'
 import { ProductListComponent } from './products/product-list.component';
 import { ProductService } from './products/product.service';
+import { IngredientService } from './food/ingredient.service';
 import { ProductDetailComponent } from './products/product-detail.component' 
-
 
 // Decorator - like an attribute
 @Component({
     selector: 'pm-app',
-    template:`
-    <div>
-        <nav class='nav navbar-default'>
-            <div class='container-fluid'>
-                <a class='navbar-brand'>{{pageTitle}}</a>
-                <ul class='nav navbar-nav'>
-                    <li><a [routerLink]="['Welcome']">Home</a> </li>
-                    <li><a [routerLink]="['Products']">Product List</a> </li>
-                </ul>
-            </div>
-        </nav>
-        <div class='container'>
-            <router-outlet></router-outlet>
-        </div>
-    </div>
-    `,
+    templateUrl: 'app/app.layout.html',
     directives: [ROUTER_DIRECTIVES],
-    providers: [ProductService, HTTP_PROVIDERS, ROUTER_PROVIDERS]
+    providers: [IngredientService, ProductService, HTTP_PROVIDERS, ROUTER_PROVIDERS]
 })
 @RouteConfig([
     {path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true},
+    {path: '/food', name: 'Food', component: FoodComponent},
     {path: '/products', name: 'Products', component: ProductListComponent},
     {path: '/product/:id', name: 'ProductDetail', component: ProductDetailComponent}
 ])
 export class AppComponent {
-    pageTitle: string = 'Acme Product Management';
+    pageTitle: string = 'Nutrition Tracker';
 }

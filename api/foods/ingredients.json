@@ -1,0 +1,27 @@
+[
+    {
+        "Id": 1,
+        "Name": "Chicken",
+        "Calories": "270"
+    },
+    {
+        "productId": 2,
+        "Name": "Beef",
+        "Calories": "300"
+    },
+    {
+        "productId": 3,
+        "Name": "Salmon",
+        "Calories": "150"
+    },
+    {
+        "productId": 4,
+        "Name": "Sweet Potatoes",
+        "Calories": "500"
+    },
+    {
+        "productId": 5,
+        "Name": "Corn",
+        "Calories": "442"
+    }
+]
